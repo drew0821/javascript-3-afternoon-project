@@ -40,8 +40,13 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let arr = []; 
+  for(var key in obj) {
+    arr.push(obj[key])
+  }
+  return arr.join("");
 }
+
 
 
 
@@ -53,7 +58,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj) {
+  for (key in obj) {
+    if (obj[key]>10){
+      obj[key] = 0
+    }
+  }
+  return obj
+}
 
 
 
@@ -65,7 +77,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj) {
+  for (key in obj) {
+     obj[key] = obj[key]  * 2
+  }
+  return obj
+}
 
 
 
@@ -79,7 +96,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj){
+  let str = ''
+  for (key in obj) {
+    if (key.startsWith('sh')) {
+      str += obj[key]
+    }
+  }
+  return str
+}
 
 
 
@@ -110,7 +135,14 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(obj) {
+ for (key in obj) {
+   if (key === 'password') {
+     delete obj[key]
+   }
+ }
+ return obj
+}
 
 
 
@@ -128,9 +160,15 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
-
-//Code Here
-
+function remove(obj) {
+for (key in obj) {
+  if (obj[key] > 100) {
+    delete obj[key]
+  }
+}
+return obj
+}
+remove(deleteTheBigNumbers)
 
 
 ////////// PROBLEM 7 //////////
@@ -142,7 +180,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj) {
+  for (key in obj) {
+    if (key.startsWith('k')) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 
@@ -157,6 +202,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure(obj) {
+  for (key in obj) {
+    if (!obj[key].includes('treasure')) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
